@@ -81,7 +81,10 @@ Il linguaggio host deve consentire di costruire dei **Domain-Specific languages*
 
 ## Gradle è in espansione: Google trends
 
-{{< import path="shared-slides/build-systems/gradle-trends.md" >}}
+<!-- write-here "shared-slides/build-systems/gradle-trends.md" -->
+
+<!-- end-write -->
+
 
 ---
 
@@ -126,7 +129,7 @@ Gradle è in grado capire le *dipendenze* fra task ed eseguirli nell'ordine corr
 
 `settings.gradle.kts`
 ```kotlin
-{{% import-raw path="shared-slides/PPS-ci-examples/00-minimal/settings.gradle.kts" %}}
+{{< import-raw path="shared-slides/PPS-ci-examples/00-minimal/settings.gradle.kts" >}}
 ```
 
 `build.gradle.kts`
