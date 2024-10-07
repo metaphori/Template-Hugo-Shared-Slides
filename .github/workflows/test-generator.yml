@@ -9,7 +9,7 @@ jobs:
   ruby-generator-test:
     runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v4.2.0
+    - uses: actions/checkout@v4.2.1
       with:
         path: shared-slides
     - name: Setup Ruby
@@ -18,7 +18,7 @@ jobs:
         working-directory: shared-slides
     - name: Check the Ruby syntax
       run: ruby -c shared-slides/preprocess.rb
-    - uses: actions/checkout@v4.2.0
+    - uses: actions/checkout@v4.2.1
       with:
         repository: DanySK/Course-DTM-SE-3
         path: target
@@ -40,10 +40,10 @@ jobs:
           - repo: apice-at-disi/oop-lab
             folder: 'slides-markdown'
     steps:
-    - uses: actions/checkout@v4.2.0
+    - uses: actions/checkout@v4.2.1
       with:
         repository: ${{ matrix.target.repo }}
-    - uses: actions/checkout@v4.2.0
+    - uses: actions/checkout@v4.2.1
       with:
         path: ${{ matrix.target.folder }}/shared-slides
     - name: Setup Ruby
