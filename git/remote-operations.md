@@ -101,6 +101,11 @@ class C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11,C12,C13,CL1,CL2,CL3,CL4,CL5,CL6,CL7,CL8
 * The local branch `master` is set up to track `origin/master` as upstream
 * Additional branches are *fetched* (they are known locally), but they are not checked out
 
+### Observation of repositories with remotes
+
+* Branches, including remote branches, can be visualized with `git branch -a`
+* The current status of all branches can be visualized with `git log --oneline --graph --all`
+
 ---
 
 ## Importing remote branches
@@ -569,6 +574,12 @@ To check if a *remote* has any *update* available, git provides th `git fetch` s
 
 The new *information fetched* includes new *commits*, *branches*, and *tags*.
 
+### Checking the status after a fetch
+
+After a `fetch`, the *status* of the remote repositories is updated, and can be inspected using:
+* `git branch -a` for branches (to discover, e.g., new branches)
+* `git log --oneline --graph --all` to visualize the history of all the known clones of the repository
+
 ---
 
 ## Fetch + merge example
@@ -736,6 +747,8 @@ still, it is important to understand that *it is not a primitive operation*
 Git provides a way to *send* changes to a remote: `git push remote branch`
 * sends the current branch changes to `remote/branch`, and updates the remote `HEAD`
 * if the branch or the remote is omitted, then the *upstream* branch is used
+    * the upstream branch can be (re)set at push time using `-u` or `--set-upstream-to`
+        * e.g.,: `git push -u myremote myremotebranch` sets the upstream branch of the current branch to `myremote/myremotebranch`
 * `push` *requires writing rights to the remote repository*
 * `push` *fails* if the pushed branch is not a *descendant* of the destination branch, which means:
   * the destination branch has *work that is not present* in the local branch
