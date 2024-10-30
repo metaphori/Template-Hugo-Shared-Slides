@@ -13,7 +13,7 @@ jobs:
       with:
         path: shared-slides
     - name: Setup Ruby
-      uses: ruby/setup-ruby@v1.197.0
+      uses: ruby/setup-ruby@v1.198.0
       with:
         working-directory: shared-slides
     - name: Check the Ruby syntax
@@ -47,7 +47,7 @@ jobs:
       with:
         path: ${{ matrix.target.folder }}/shared-slides
     - name: Setup Ruby
-      uses: ruby/setup-ruby@v1.197.0
+      uses: ruby/setup-ruby@v1.198.0
       with:
         working-directory: ${{ matrix.target.folder }}/shared-slides
     - name: Run tests
